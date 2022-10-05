@@ -205,11 +205,16 @@
                 .iconBubble{
                     width: 20px;
                     height: 20px;
-                    background: green;
+                    background: #65c100;
                     color: white;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    font-size: 14px;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 15px;
+                    left: 15px;
 
                 }
             }
