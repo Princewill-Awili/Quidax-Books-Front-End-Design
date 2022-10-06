@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {BiArrowBack} from 'react-icons/bi'
+import {MdOutlineShoppingCart as CartIcon} from 'react-icons/md'
 
 import { states } from '../../context';
 import { useContext } from 'react';
@@ -26,6 +27,13 @@ const Cart = () => {
                 >
                     <BiArrowBack/>
                     <span className="backTxt">Back</span>
+                </div>
+
+                <div className="cartInfo">
+                    <span className="cartInfoText">Your Cart</span>
+                    <div className="cartInfoIconWrapper">
+                        <CartIcon className='cartInfoIcon'/>
+                    </div>
                 </div>
             </div>
     </div>

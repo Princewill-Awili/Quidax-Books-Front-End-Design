@@ -1,0 +1,25 @@
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tablet {    
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}
+
+.bookThumbnail{
+  border: 1px solid black;
+    width: 16%;
+    height: 100%;
+    display: flex;
+    background-image:url('https://wordsofwelcome.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-12-at-12.16.22-PM.png');
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
