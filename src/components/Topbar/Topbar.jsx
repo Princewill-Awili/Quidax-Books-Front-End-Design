@@ -11,11 +11,8 @@ import { states } from '../../context';
 
 const Topbar = () => {
 
-    const {query, setQuery} = useContext(states);
-
+    const {query, setQuery, cartMode, setCartMode} = useContext(states);
     const [searchMode, setSearchMode] = useState(false);
-    const [cartMode, setCartMode] = useState(false);
-
     const[dropHeight,setDropHeight] = useState(false);
 
 
@@ -35,9 +32,25 @@ const Topbar = () => {
 
         <div className="tbCenter">
             <div className="searchBarWrapper">
-                <input type="text" className="searchBar" placeholder='Search books, authors, genres, etc.' />
+                <input 
+                    type="text" 
+                    className="searchBar" 
+                    placeholder='Search books, authors, genres, etc.' 
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                />
                 <div className="searchIconWrapper">
-                    <FiSearch className='searchIcon'/>
+                    {query.length === 0 && (<FiSearch  className='searchIcon'/>)}
+                        {
+                            query.length > 0 && (
+                                                    <Close 
+                                                        className='searchIcon' 
+                                                        onClick = {()=> {
+                                                            setSearchMode(!searchMode);
+                                                            setQuery('');
+                                                        }}/>
+                                                )
+                        }
                 </div>
             </div>
         </div>
@@ -52,14 +65,23 @@ const Topbar = () => {
                     }}
                 />
                 <TbBooks className='mbIcons cartIcon'/>
-                <div className="cartIconWrapper">
+                <div className="cartIconWrapper" onClick={()=> setCartMode(!cartMode)}>
                     <CartIcon className='mbIcons cartIcon'/>
                     <div className="iconBubble">2</div>
                 </div>
+                
             </div>
 
             <div className="logo2IconWrapper">
                 <TbBooks className='logo2Icon'/>
+            </div>
+
+            <div 
+                className="cartContainer" 
+                onClick={()=>setCartMode(!cartMode)}
+            >
+                <CartIcon className='mainCartIcon'/>
+                <div className="mainCartBubble">2</div>
             </div>
         </div>
 
@@ -91,7 +113,7 @@ const Topbar = () => {
                             query.length > 0 && (
                                                     <Close 
                                                         className='mobileSearchIcon' 
-                                                        onClick = {()=> setQuery('')}/>
+                                                        onClick = {()=> setSearchMode(!searchMode)}/>
                                                 )
                         }
                     </div>
@@ -100,13 +122,7 @@ const Topbar = () => {
            ) 
         }
 
-        {
-            cartMode && (
-                <div className="cartBar">
-                    
-                </div>
-            )
-        }
+        
     </div>
   )
 }
