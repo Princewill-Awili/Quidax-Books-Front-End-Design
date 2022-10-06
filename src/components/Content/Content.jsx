@@ -1,11 +1,12 @@
 import './content.css'
+import '../BookThumbnail/bookthumbnail.scss'
 import BookThumbnail from '../BookThumbnail/BookThumbnail'
 
 const Content = () => {
   return (
     <div className='content'>
+       <span className="frameTitle">Featured Books</span>
         <div className="frame">
-            <span className="frameTitle">Featured Books</span>
             <div className="carousel">
                 <BookThumbnail/>
                 <BookThumbnail/>

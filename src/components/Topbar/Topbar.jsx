@@ -94,7 +94,7 @@ const Topbar = () => {
                         setDropHeight(!dropHeight);
                         setTimeout(()=>{
                             setSearchMode(!searchMode)
-                        },300)
+                        },500)
                         
                     }} 
                 />

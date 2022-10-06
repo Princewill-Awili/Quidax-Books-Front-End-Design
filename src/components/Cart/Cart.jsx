@@ -22,7 +22,7 @@ const Cart = () => {
                         setOpenCart(false);
                         setTimeout(()=>{
                             setCartMode(!cartMode)
-                        },300) 
+                        },500) 
                     }}
                 >
                     <BiArrowBack/>
