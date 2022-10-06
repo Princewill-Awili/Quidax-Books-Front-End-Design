@@ -1,6 +1,6 @@
 import './content.css'
-import '../BookThumbnail/bookthumbnail.scss'
 import BookThumbnail from '../BookThumbnail/BookThumbnail'
+import { books } from '../../dummyData'
 
 const Content = () => {
   return (
@@ -8,12 +8,24 @@ const Content = () => {
        <span className="frameTitle">Featured Books</span>
         <div className="frame">
             <div className="carousel">
-                <BookThumbnail/>
-                <BookThumbnail/>
-                <BookThumbnail/>
-                <BookThumbnail/>
-                <BookThumbnail/>
-                <BookThumbnail/>
+                {
+                  books.map((book,index)=>(
+                    <BookThumbnail 
+                      key={index} 
+                      id={index}
+                      img={book.img}
+                      title={book.title}
+                      ratings={book.ratings}
+                      genre = {book.genre}
+                      tags= {book.tags}
+                      stock={book.stock}
+                      followers={book.followers}
+                      likes={book.likes}
+                      author={book.author}
+                      releasedYear={book.releasedYear}
+                    />
+                  ))
+                }
             </div>
         </div>
     </div>

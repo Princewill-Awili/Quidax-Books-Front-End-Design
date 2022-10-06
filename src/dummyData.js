@@ -1,6 +1,6 @@
 export const books = [
     {
-        title:"Big Magic: How to Live a Creative Life, and Let Go of Your Fear",
+        title:"Big Magic",
         ratings:4.0,
         img:"https://m.media-amazon.com/images/I/51fqxtaYzML._SX308_BO1,204,203,200_.jpg",
         genre:"Motivational",
@@ -37,7 +37,7 @@ export const books = [
     },
 
     {
-        title:"Built to Last: Successful Habits of Visionary Companies",
+        title:"Built to Last",
         ratings:4.0,
         img:"https://www-konga-com-res.cloudinary.com/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/O/S/124210_1544270025.jpg",
         genre:"Business",
@@ -56,7 +56,7 @@ export const books = [
     },
 
     {
-        title:"The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
+        title:"The Lean Startup",
         ratings:3.5,
         img:"https://m.media-amazon.com/images/I/51PAIR77wJL.jpg",
         genre:"Business",
@@ -75,7 +75,7 @@ export const books = [
     },
 
     {
-        title:"The Effective Engineer: How to Leverage Your Efforts In Software Engineering to Make a Disproportionate and Meaningful Impact ",
+        title:"The Effective Engineer",
         ratings:5.0,
         img:"https://m.media-amazon.com/images/I/61AdWLqiIBL.jpg",
         genre:"Software Engineering",
