@@ -17,7 +17,7 @@
 
 .bookthumbnail:hover > .bookInfo{
   display: flex;
-  transition: all 1s ease-out;
+  transition: display 1s ease-out;
 }
 
     .bookInfo{
@@ -45,13 +45,11 @@
         margin-bottom:5px;
       }
 
-      .author{
+      .author,.year{
         font-size: 12px;
         font-weight: 100;
       }
       .year{
-        font-size: 12px;
-        font-weight: 100;
         margin-bottom: 15px;
       }
 
