@@ -1,6 +1,7 @@
 import './content.css'
 import BookThumbnail from '../BookThumbnail/BookThumbnail'
 import { books } from '../../dummyData'
+import Section from '../Section/Section'
 
 const Content = () => {
   return (
@@ -28,6 +29,7 @@ const Content = () => {
                 }
             </div>
         </div>
+        <Section title=" Featured Books"/>
     </div>
   )
 }
