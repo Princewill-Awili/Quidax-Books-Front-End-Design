@@ -57,7 +57,7 @@ export const books = [
 
     {
         title:"The Lean Startup",
-        ratings:3.5,
+        ratings:3,
         img:"https://m.media-amazon.com/images/I/51PAIR77wJL.jpg",
         genre:"Business",
         tags:["Business Management","Finance"],

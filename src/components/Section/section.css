@@ -3,12 +3,50 @@
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 20px 5%;
+    padding: 20px 0% 20px 0%;
+    height: 450px;
+    position: relative;
 }
 
 .sectionTitle{
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     font-size: 16px;
     color:#010101;
     font-weight: 800;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.carousel{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tilesWrapper{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    padding: 0px 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
 }
