@@ -3,6 +3,10 @@ import './booktile.css'
 import {MdPeopleOutline as People} from 'react-icons/md'
 import {AiOutlineHeart as Likes ,AiFillStar as Rating} from 'react-icons/ai'
 import {MdOutlineShoppingCart as CartIcon} from 'react-icons/md'
+import { states } from '../../context'
+import { useContext } from 'react'
+
+
 
 const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratings,price,stock}) => {
 
@@ -14,9 +18,20 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
 
   const [filled,unfilled] = ratingFunc(ratings);
 
+  const { setCart, books } = useContext(states);
+
+  const addToCart = (e) => {
+    const selectedItem = books.find(item => item.id === e.target.id);
+    setCart(selectedItem);
+  }
+
+  const openBook = (e) => {
+    
+  }
+
 
   return (
-    <div className='booktile'>
+    <div className='booktile' onClick={(e)=> openBook(e)} id={id}>
         <div className="left">
             <img src={img} alt="bookImg" className='bookImg' />
         </div>
@@ -56,13 +71,10 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
               </span>
             </p>
 
-            <div className="addToCart">
-              <CartIcon/>
-              <span className="add">Add to Cart</span>
+            <div className="addToCart" id={id} onClick={(e)=> addToCart(e)}>
+              <CartIcon id={id} onClick={(e)=> addToCart(e)}/>
+              <span className="add" id={id} onClick={(e)=> addToCart(e)}>Add to Cart</span>
             </div>
-
-
-
         </div>
     </div>
   )

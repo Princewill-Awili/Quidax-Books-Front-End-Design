@@ -65,6 +65,10 @@
     justify-content: center;
 }
 
+.followers>svg, .likes>svg{
+    font-size: 16px;
+}
+
 .followers>span, .likes>span{
     font-size: 12px;
 }
