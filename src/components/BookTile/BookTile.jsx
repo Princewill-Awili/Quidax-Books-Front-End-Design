@@ -5,6 +5,7 @@ import {AiOutlineHeart as Likes ,AiFillStar as Rating} from 'react-icons/ai'
 import {MdOutlineShoppingCart as CartIcon} from 'react-icons/md'
 import { states } from '../../context'
 import { useContext } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -16,17 +17,23 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
     return [numFilled,numUnfilled];
   }
 
+  const navigate = useNavigate();
+
   const [filled,unfilled] = ratingFunc(ratings);
 
   const { setCart, books } = useContext(states);
 
   const addToCart = (e) => {
     const selectedItem = books.find(item => item.id === e.target.id);
-    setCart(selectedItem);
+    setCart(prev => [...prev,selectedItem]);
   }
 
   const openBook = (e) => {
-    
+    console.log(e.currentTarget.id)
+    const selectedBook = books[e.currentTarget.id];
+    console.log(selectedBook);
+    localStorage.setItem('selectedBook', JSON.stringify(selectedBook));
+    navigate(`/book`);
   }
 
 

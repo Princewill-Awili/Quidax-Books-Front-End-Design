@@ -3,6 +3,7 @@
     width: 30%;
     height: 180px;
     margin: 0px 40px 50px 0px;
+    cursor: pointer;
 }
 
 .left{
@@ -128,4 +129,18 @@
 .addToCart>svg{
     font-size: 16px;
     font-weight: 700;
+}
+
+
+@media screen and (max-width:680px) {
+  .booktile{
+    min-width: 80%;
+    
+  }  
+}
+
+@media screen and (max-width:481px) {
+    .booktile{
+        width: 100%;
+      }  
 }

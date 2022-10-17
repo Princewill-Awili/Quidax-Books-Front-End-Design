@@ -6,13 +6,18 @@ import Content from '../Content/Content'
 import { useContext } from 'react'
 import { states } from '../../context'
 
+import {BrowserRouter as Router} from "react-router-dom"
+
 const MainPage = () => {
 
-    const {cartMode, setCartMode} = useContext(states);
+    const {cartMode} = useContext(states);
   return (
     <div className='mainpage'>
         <Topbar/>
-        <Content/>
+        <Router>
+            <Content/>
+        </Router>
+
         {cartMode && (<Cart/>)}
         
         { cartMode && (
