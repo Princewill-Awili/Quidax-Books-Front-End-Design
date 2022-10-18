@@ -20,11 +20,12 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
   const [filled,unfilled] = ratingFunc(ratings);
 
   const navigate = useNavigate();
-  const { setCart, books } = useContext(states);
+  const { cart,setCart, books } = useContext(states);
 
   const addToCart = (e) => {
     const selectedItem = books.find(item => item.id === e.target.id);
     setCart(prev => [...prev,selectedItem]);
+    console.log(cart)
   }
 
   const openBook = (e) => {
@@ -37,9 +38,9 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
 
 
   return (
-    <div className='booktile' onClick={(e)=> openBook(e)} id={id}>
+    <div className='booktile' >
         <div className="left">
-            <img src={img} alt="bookImg" className='bookImg' />
+            <img src={img} alt="bookImg" className='bookImg' onClick={(e)=> openBook(e)} id={id}/>
         </div>
         <div className="right">
             <h5 className='title'>{title}</h5>

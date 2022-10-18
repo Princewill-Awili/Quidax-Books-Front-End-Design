@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 const Topbar = () => {
 
-    const {query, setQuery, cartMode, setCartMode} = useContext(states);
+    const {query, setQuery, cartMode, setCartMode, cart} = useContext(states);
     const [searchMode, setSearchMode] = useState(false);
     const[dropHeight,setDropHeight] = useState(false);
 
@@ -70,7 +70,7 @@ const Topbar = () => {
                 <TbBooks className='mbIcons cartIcon'/>
                 <div className="cartIconWrapper" onClick={()=> setCartMode(!cartMode)}>
                     <CartIcon className='mbIcons cartIcon'/>
-                    <div className="iconBubble">2</div>
+                    <div className="iconBubble">{cart.length}</div>
                 </div>
                 
             </div>
@@ -84,7 +84,7 @@ const Topbar = () => {
                 onClick={()=>setCartMode(!cartMode)}
             >
                 <CartIcon className='mainCartIcon'/>
-                <div className="mainCartBubble">2</div>
+                <div className="mainCartBubble">{cart.length}</div>
             </div>
         </div>
 

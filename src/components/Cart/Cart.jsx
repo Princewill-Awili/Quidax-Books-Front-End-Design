@@ -2,12 +2,14 @@ import React,{useState} from 'react'
 import {BiArrowBack} from 'react-icons/bi'
 import {MdOutlineShoppingCart as CartIcon} from 'react-icons/md'
 
+import CartItem from '../CartItem/CartItem';
+
 import { states } from '../../context';
 import { useContext } from 'react';
 
 const Cart = () => {
 
-    const {cartMode, setCartMode} = useContext(states);
+    const {cartMode, setCartMode, cart} = useContext(states);
     const [openCart, setOpenCart] = useState(true);
 
   return (
@@ -35,6 +37,13 @@ const Cart = () => {
                         <CartIcon className='cartInfoIcon'/>
                     </div>
                 </div>
+            </div>
+            <div className="cartBasket">
+                {
+                    cart.map((item)=>(
+                        <CartItem key={item.id}/>
+                    ))
+                }    
             </div>
     </div>
   )
