@@ -17,10 +17,9 @@ const BookTile = ({id,img,title,author,releasedYear,genre, followers,likes,ratin
     return [numFilled,numUnfilled];
   }
 
-  const navigate = useNavigate();
-
   const [filled,unfilled] = ratingFunc(ratings);
 
+  const navigate = useNavigate();
   const { setCart, books } = useContext(states);
 
   const addToCart = (e) => {

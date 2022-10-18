@@ -11,4 +11,146 @@
     width: 100%;
     max-width: 100%;
     padding: 10px;
+    display: flex;
+}
+
+.pageLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.backToMain{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.bookImage{
+    max-width: 80%;
+    height: 400px;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+.bookStock{
+    font-size: 14px;
+    margin-top: 70px;
+    font-weight: 600;
+}
+
+.bookPrice{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.addToCartBtn{
+    display: flex;
+    color: white;
+    background-color: black;
+    height: 50px;
+    width: 80%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 20px 0 20px;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.addToCartBtn>svg{
+    font-size: 20px;
+}
+.addToCartBtn>span{
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+
+
+
+.pageRight{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.bookTitle{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.bookAuthor{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.infoRack{
+    display: flex;
+    height: 70px;
+    border: none;
+    border-top: 1px solid #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.bookIcons{
+    display: flex;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    border-right: 1px solid #F2F2F2;
+    padding-right: 10px;
+}
+
+.bookFollowers, .bookLikes{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size:14px;
+
+}
+
+.bookFollowers>span, .bookLikes>span{
+    font-size: 12px;
+}
+
+.bookRatingsContainer{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 5px;
+    text-align: left;
+}
+
+.ratingLabel{
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+    
+}
+
+.rateNum{
+    font-weight: normal;
+}
+
+.smallTabsContainer{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }

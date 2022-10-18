@@ -7,6 +7,7 @@ import {BiArrowBack} from 'react-icons/bi'
 import {IoClose as Close} from 'react-icons/io5'
 
 import { states } from '../../context';
+import { Link } from 'react-router-dom';
 
 
 const Topbar = () => {
@@ -20,14 +21,16 @@ const Topbar = () => {
     <div className='topbar'>
 
         <div className="tbLeft">
-            <div className="logoIconWrapper">
-                <TbBooks className='logoIcon'/>
-            </div>
-            
-            <div className="logoText">
-                <span className="logoName">Quidax Books</span>
-                <span className="logoCaption">A flimsy book company</span>
-            </div>
+            <Link to="/">
+                <div className="logoIconWrapper" style={{cursor:"pointer"}}>
+                    <TbBooks className='logoIcon'/>
+                </div>
+                
+                <div className="logoText" style={{cursor:"pointer"}}>
+                    <span className="logoName">Quidax Books</span>
+                    <span className="logoCaption">A flimsy book company</span>
+                </div>
+            </Link>
         </div>
 
         <div className="tbCenter">
