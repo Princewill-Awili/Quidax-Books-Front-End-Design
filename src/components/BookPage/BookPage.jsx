@@ -92,41 +92,68 @@ const BookPage = () => {
                 <span className="bookYear">{book.releasedYear}</span>
 
                 <div className="infoRack">
-
-                    <div className="bookIcons">
-                        <div className="bookFollowers">
-                            <People/>
-                            <span>{book.followers}</span>
+                    <div className="infoRackLeft">
+                        <div className="bookIcons">
+                            <div className="bookFollowers">
+                                <People/>
+                                <span>{book.followers}</span>
+                            </div>
+                            <div className="bookLikes">
+                                <Likes/>
+                                <span>{book.likes}</span>
+                            </div>
                         </div>
-                        <div className="bookLikes">
-                            <Likes/>
-                            <span>{book.likes}</span>
+
+                        <div className="bookRatingsContainer">
+                            <span className="ratingLabel">Ratings:<span className='rateNum'> {book.ratings}</span></span>
+                            <div className="starHolder">
+                                {[...Array(filled)].map((x,index) => (
+                                    <Rating key={`${index}filled`} className="filled"/>
+                                ))}
+                                {[...Array(unfilled)].map((y,index)=>(
+                                    <Rating key={`${index}unfilled`} className="unfilled"/>
+                                ))}
+                            </div>
                         </div>
                     </div>
-
-                    <div className="bookRatingsContainer">
-                        <span className="ratingLabel">Ratings:<span className='rateNum'> {book.ratings}</span></span>
-                        <div className="starHolder">
-                            {[...Array(filled)].map((x,index) => (
-                                <Rating key={`${index}filled`} className="filled"/>
-                            ))}
-                            {[...Array(unfilled)].map((y,index)=>(
-                                <Rating key={`${index}unfilled`} className="unfilled"/>
-                            ))}
-                        </div>
-                    </div>
+                    
 
                     <div className="smallTabsContainer">
-                        <SmallTabs title="Genre" text={book.genre}/>
-                        <SmallTabs title="Tags" text={lister(book.tags)}/>
-                        <SmallTabs title="Publisher" text={book.publisher}/>
-                        <SmallTabs title="Released" text={book.releasedDate}/>
+                        <SmallTabs className="smallTabs" title="Genre" text={book.genre}/>
+                        <SmallTabs className="smallTabs" title="Tags" text={lister(book.tags)}/>
+                        <SmallTabs className="smallTabs" title="Publisher" text={book.publisher}/>
+                        <SmallTabs className="smallTabs" title="Released" text={book.releasedDate}/>
                     </div>
 
                 </div>
-            </div>
 
+                <p className="review">{book.reviews[0]}</p>
+
+                <p className="aboutAuthor">
+                    {book.aboutAuthor}
+                </p>
+
+                <p className="desc">{book.description}</p>
+                <p className="desc">{book.description}</p>
+                <p className="desc">{book.description}</p>
+
+
+                <div className="addToCartMobile">
+                    <CartIcon/>
+
+                    <div className="atcmMid">
+                        <span>Add to Cart</span>
+                        <span className="atcmMidStock" style={{color: book.stock>0 ? "#78C920" : "#ED3F40"}}>{book.stock > 0 ? `${book.stock} copies available` : 'Out of Stock'}</span>
+                    </div>
+
+                    <span className='atcmPrice'>${book.price}</span>
+                </div>
+
+            </div>
+                
         </div>
+            
+            
     </div>
   )
 }

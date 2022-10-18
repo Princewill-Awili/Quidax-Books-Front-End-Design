@@ -97,7 +97,14 @@
     border-top: 1px solid #F2F2F2;
     border-bottom: 1px solid #F2F2F2;
     margin-top: 20px;
+    margin-bottom: 20px;
     align-items: center;
+}
+
+.infoRackLeft{
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .bookIcons{
@@ -153,4 +160,127 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    
+}
+
+.review{
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    text-justify: auto;
+}
+
+.aboutAuthor, .desc{
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    text-justify: auto;
+}
+
+.addToCartMobile{
+    display: none;
+    width: 80%;
+    margin-left: 10%;
+    height: 80px;
+    background-color: black;
+    color:white;
+    position: fixed;
+    bottom:20px;
+    right: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.atcmMid{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.addToCartMobile>svg{
+    font-size: 30px;
+}
+
+.atcmMid>.atcmMidStock{
+    font-size: 12px;
+}
+
+.atcmPrice{
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:680px) {
+
+    
+}
+
+
+@media screen and (max-width:481px) {
+    .pageWrapper{
+        flex-direction: column;
+    }
+    .pageLeft,.pageRight{
+        justify-content: center;
+    }
+
+    .infoRack{
+        flex-direction: column;
+        height: fit-content;
+        padding-bottom: 20pxs;
+        justify-content: flex-start;
+        align-items: start;
+        width: 100%;
+    }
+    .infoRackLeft{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        padding-bottom: 20px;
+    }
+    .bookIcons{
+        display: flex;
+        width: 30%;
+        border: none;
+        align-items: center;
+    }
+
+    .bookRatingsContainer{
+        align-items: center;
+        width: 50%;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .starHolder{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .smallTabsContainer{
+        flex-wrap: wrap;
+        align-items: start;
+        height: 150px;
+        justify-content: start;
+        gap: 0px;
+        padding-left: 0px;
+    }
+
+    .smallTabsContainer>div{
+        width: 50%;
+        height: 20px;
+        padding: 10px;
+    }
+
+
+    .bookStock, .bookPrice, .addToCartBtn{
+        display: none;
+    }
+
+   
+    .addToCartMobile{
+        display: flex;
+    }
 }
